@@ -11,10 +11,12 @@ def get_ripple_nav():
     locked_xrp = 34_200_000_000
     unlocked_xrp = 7_800_000_000
     acquisitions_cost = 4_250_000_000  # GTreasury, Hidden Road, etc.
+    bid_price = 100
 
     # 3. XRP Calculations (XRP per share)
     locked_per_share = locked_xrp / shares
     unlocked_per_share = unlocked_xrp / shares
+    total_xrp_per_share = (locked_xrp + unlocked_xrp) / shares
     
     # 4. Scenario Calculations
     xrp_nav_usd = (locked_per_share + unlocked_per_share) * price
@@ -24,19 +26,22 @@ def get_ripple_nav():
     # 5. Grand Totals
     total_100 = xrp_nav_usd + assets_100
     total_50 = xrp_nav_usd + assets_50
+    potential_return = total_100 / bid_price
 
     message = (
-        f"📊 *Daily Ripple NAV Report*\n"
-        f"XRP Price: ${price:,.2f}\n\n"
+        f"📊 *Ripple NAV Watch*\n"
+        f"XRP Price: ${price:,.2f}\n"
+        f"NAV per share: ${total_100:.0f}\n"
+        f"Return potential: ${potential_return:.1f}\n\n"
         f"1. *XRP NAV per Share*\n"
-        f"   • Locked: {locked_per_share:.2f} XRP (${locked_per_share*price:.2f})\n"
-        f"   • Unlocked: {unlocked_per_share:.2f} XRP (${unlocked_per_share*price:.2f})\n\n"
+        f"   • Locked: {locked_per_share:.1f} XRP (${locked_per_share*price:.1f})\n"
+        f"   • Unlocked: {unlocked_per_share:.1f} XRP (${unlocked_per_share*price:.1f})\n\n"
         f"2. *Strategic Assets NAV*\n"
-        f"   • 100% Valuation: ${assets_100:.2f}\n"
-        f"   • 50% Valuation: ${assets_50:.2f}\n\n"
+        f"   • 100% Valuation: ${assets_100:.1f}\n"
+        f"   • 50% Valuation: ${assets_50:.1f}\n\n"
         f"3. *Grand Total NAV*\n"
-        f"   • Bull Case: *${total_100:.2f}*\n"
-        f"   • Conservative: *${total_50:.2f}*"
+        f"   • Bull Case: *${total_100:.1f}*\n"
+        f"   • Conservative: *${total_50:.1f}*"
     )
     return message
 
