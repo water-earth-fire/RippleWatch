@@ -32,7 +32,7 @@ def get_ripple_nav():
         f"📊 *Ripple NAV Watch*\n"
         f"XRP Price: ${price:,.2f}\n"
         f"NAV per share: ${total_100:.0f}\n"
-        f"Return potential: ${potential_return:.1f}\n\n"
+        f"Return potential: {potential_return:.1f}x\n\n"
         f"1. *XRP NAV per Share*\n"
         f"   • Locked: {locked_per_share:.1f} XRP (${locked_per_share*price:.1f})\n"
         f"   • Unlocked: {unlocked_per_share:.1f} XRP (${unlocked_per_share*price:.1f})\n\n"
