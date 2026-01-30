@@ -2,7 +2,7 @@ name: Daily Ripple NAV Push
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # Schedule Run
+    - cron: '*/30 * * * *'  # Schedule Run
   workflow_dispatch:      # Allows manual trigger
 
 jobs:
