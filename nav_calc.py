@@ -29,19 +29,11 @@ def get_ripple_nav():
     potential_return = total_100 / bid_price
 
     message = (
-        f"📊 *Ripple NAV Watch*\n"
         f"XRP Price: ${price:,.2f}\n"
-        f"NAV per share: ${total_100:.0f}\n"
-        f"Return potential: {potential_return:.1f}x\n\n"
-        f"1. *XRP NAV per Share*\n"
-        f"   • Locked: {locked_per_share:.1f} XRP (${locked_per_share*price:.1f})\n"
-        f"   • Unlocked: {unlocked_per_share:.1f} XRP (${unlocked_per_share*price:.1f})\n\n"
-        f"2. *Strategic Assets NAV*\n"
-        f"   • 100% Valuation: ${assets_100:.1f}\n"
-        f"   • 50% Valuation: ${assets_50:.1f}\n\n"
-        f"3. *Grand Total NAV*\n"
-        f"   • Bull Case: *${total_100:.1f}*\n"
-        f"   • Conservative: *${total_50:.1f}*"
+        f"Ripple NAV/share: ${total_100:.0f}\n"
+        f"MOIC: {potential_return:.1f}x\n"
+        f"1. XRP NAV per Share: ${(locked_per_share+unlocked_per_share)*price:.1f}*\n"
+        f"2. Strategic Assets NAV: ${assets_100:.1f}*\n"
     )
     return message
 
