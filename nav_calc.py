@@ -32,8 +32,8 @@ def get_ripple_nav():
         f"XRP Price: ${price:,.2f}\n"
         f"Ripple NAV/share: ${total_100:.0f}\n"
         f"MOIC: {potential_return:.1f}x\n"
-        f"1. XRP NAV per Share: ${(locked_per_share+unlocked_per_share)*price:.1f}*\n"
-        f"2. Strategic Assets NAV: ${assets_100:.1f}*\n"
+        f"1. XRP NAV per Share: ${(locked_per_share+unlocked_per_share)*price:.1f}\n"
+        f"2. Strategic Assets NAV: ${assets_100:.1f}\n"
     )
     return message
 
