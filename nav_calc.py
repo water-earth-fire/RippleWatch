@@ -26,14 +26,11 @@ def get_ripple_nav():
     # 5. Grand Totals
     total_100 = xrp_nav_usd + assets_100
     total_50 = xrp_nav_usd + assets_50
-    potential_return = total_100 / bid_price
+    potential_return = total_100 / 5
 
     message = (
-        f"XRP Price: ${price:,.2f}\n"
-        f"Ripple NAV/share: ${total_100:.0f}\n"
-        f"MOIC: {potential_return:.1f}x\n"
-        f"1. XRP NAV per Share: ${(locked_per_share+unlocked_per_share)*price:.1f}\n"
-        f"2. Strategic Assets NAV: ${assets_100:.1f}\n"
+        f"*XRP Price:* ${price:,.2f}; Labs NAV/sh:* ${total_100:.0f}\n"
+        f"*FV at 5.0x MOIC:* {potential_return:.1f}x\n"
     )
     return message
 
