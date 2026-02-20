@@ -29,7 +29,7 @@ def get_ripple_nav():
     potential_return = total_100 / 5
 
     message = (
-        f"*XRP Price:* ${price:,.2f} (Labs NAV/sh:* ${total_100:.0f})\n"
+        f"*XRP Price:* ${price:,.2f} and NAV-sh:* ${total_100:.0f}\n"
         f"*FV at 5.0x MOIC:* {potential_return:.1f}x\n"
     )
     return message
